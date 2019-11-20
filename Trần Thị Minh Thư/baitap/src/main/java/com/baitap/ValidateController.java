@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @SuppressWarnings("deprecation")
 @Controller
-public class LoginController extends WebMvcConfigurerAdapter {
+public class ValidateController extends WebMvcConfigurerAdapter {
 	
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -20,16 +20,16 @@ public class LoginController extends WebMvcConfigurerAdapter {
     }
 
     @GetMapping("/")
-    public String showForm(LoginForm loginForm) {
+    public String showForm(ValidateForm validateForm) {
         return "login";
     }
 
     @PostMapping("/")
-    public String validateLogin(Model model, @Valid LoginForm loginForm, BindingResult bindingResult) {
+    public String validateLogin(Model model, @Valid ValidateForm validateForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "login";
         }
-        model.addAttribute("user", loginForm.getUserName());
+        model.addAttribute("user", validateForm.getUserName());
         return "home";
     }
 }

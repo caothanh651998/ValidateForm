@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class LoginForm {
+public class ValidateForm {
     @NotNull
     @Size(min = 5, max = 10, message="Số ký tự tối đa là 10 và tối thiểu là 5")
     String userName;

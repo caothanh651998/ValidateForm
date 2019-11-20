@@ -12,24 +12,24 @@
 <link rel="stylesheet" href="style.css" />
 <style type="text/css">
 	.container{
-		background-image: url('https://cdn.shopify.com/s/files/1/0043/8471/8938/products/155613364003514899.jpg?v=1565119707');
-		background-repeat: no-repeat;
-		background-size: 1500px;
+		background: #778899;
+		height: 1100px;
 	}
 	form{
 		width: 600px;
-	    height: 700px;
+	    height: 900px;
 	    margin-top: 100px;
 	    margin-left: 28%;
-	}
+	} 
+
 </style>
 </head>
 <body>
     <div class="container">
     	<div class="row">
     		<div class="col-4">
-    			<div class="login-form">
-			        <form action="#" th:action="@{/}" th:object="${loginForm}"
+    			<div class="validate-form">
+			        <form action="#" th:action="@{/}" th:object="${validateForm}"
 			            method="post">
 			            <h2 class="text-center">Form Validate</h2>
 			            <div class="form-group">
