@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Document</title>
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="style.css" />
+<style type="text/css">
+	.container{
+		background-image: url('https://cdn.shopify.com/s/files/1/0043/8471/8938/products/155613364003514899.jpg?v=1565119707');
+		background-repeat: no-repeat;
+		background-size: 1500px;
+	}
+	form{
+		width: 600px;
+	    height: 700px;
+	    margin-top: 100px;
+	    margin-left: 28%;
+	}
+</style>
+</head>
+<body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-4">
+    			<div class="login-form">
+			        <form action="#" th:action="@{/}" th:object="${loginForm}"
+			            method="post">
+			            <h2 class="text-center">Form Validate</h2>
+			            <div class="form-group">
+			            	<label>Input 1</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-user"></i></span> <input
+			                        type="text" class="form-control" th:field="*{userName}"
+			                        placeholder="Nhập vào số ký tự tối đa là 10 và tối thiểu là 5" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('userName')}"
+			                    th:errors="*{userName}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 2</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="password" class="form-control" th:field="*{password}"
+			                        placeholder="Nhập số và số ký tự phải lớn hơn 3 và nhỏ hơn 7" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('password')}"
+			                    th:errors="*{password}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 3</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{maxmin}"
+			                        placeholder="Nhập ký tự có số lượng bằng 9" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('maxmin')}"
+			                    th:errors="*{maxmin}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 4</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{email}"
+			                        placeholder="Nhập vào Email" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('email')}"
+			                    th:errors="*{email}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 5</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{dateOfFuture}"
+			                        placeholder="Giá trị nhập là ngày trong tương lai" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('dateOfFuture')}"
+			                    th:errors="*{dateOfFuture}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 6</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{dateFutureOrPresent}"
+			                        placeholder="Giá trị nhập có thể là ngày hiện tại hoặc tương lại" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('dateFutureOrPresent')}"
+			                    th:errors="*{dateFutureOrPresent}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 7</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="number" class="form-control" th:field="*{soam}"
+			                        placeholder="nhập vào giá trị là 1 số âm" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('soam')}"
+			                    th:errors="*{soam}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 8</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{space}"
+			                        placeholder="nhập vào giá trị không được chứa ký tự space" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('space')}"
+			                    th:errors="*{space}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 9</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{datePast}"
+			                        placeholder="nhập vào 1 ngày trong quá khứ" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('datePast')}"
+			                    th:errors="*{datePast}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 10</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{Positive}"
+			                        placeholder="nhập vào 1 sô lớn hơn 0" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('Positive')}"
+			                    th:errors="*{Positive}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 11</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{PositiveMax}"
+			                        placeholder="nhập vào 1 sô lớn hơn 0" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('PositiveMax')}"
+			                    th:errors="*{PositiveMax}"></span>
+			            </div>
+			            <div class="form-group">
+			                <button type="submit" class="btn btn-primary login-btn btn-block">Validate</button>
+			            </div>
+			        </form>
+			    </div>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>
